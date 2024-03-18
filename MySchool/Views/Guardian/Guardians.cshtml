@@ -1,0 +1,32 @@
+﻿@model List<MySchool.Core.Application.Dtos.GuardianDto>
+@{
+}
+
+<h2>List of Guardians</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>FullName</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>
+                    <button><a asp-action="Details" asp-route-id ="@item.Id">Details</a></button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
